@@ -91,3 +91,31 @@ class Gym:
 
         except (ValueError, OSError) as error:
             print("Error loading members:", error)
+
+   
+    def add_membership(self, membership):
+        self.memberships.append(membership)
+        print("Membership plan added successfully!")
+        
+
+    def display_memberships(self):
+        if not self.memberships:
+            print("No membership plans available.")
+        else:
+            print("\n--- Available Membership Plans ---")
+            for membership in self.memberships:
+                membership.display_plan()
+                
+
+    def add_payment(self, payment):
+        self.payments.append(payment)
+        print("Payment recorded successfully!")
+        
+
+    def display_payments(self):
+        if not self.payments:
+            print("No payments recorded yet.")
+        else:
+            print("\n--- Payment Records ---")
+            for payment in self.payments:
+                payment.display_payment()
