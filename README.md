@@ -1,10 +1,7 @@
-# 🏋️ Gym Membership Management System
-
+# Gym Membership Management System
 This is my simple python program that helps a gym keep track of its **members**, **membership plans** and **payments** from a text menu in the terminal.
 My aim was to create files and add the login behind it to create a suitable gym membership program which **runs** perfectly.
-
 ---
-
 ## Table of Contents
 
 1. [What does this program do?]
@@ -22,9 +19,7 @@ My aim was to create files and add the login behind it to create a suitable gym 
    - [members.txt](#6-memberstxt--the-saved-data)
 8. [Things to know (current limitations)]
 9. [Ideas for making it better]
-
 ---
-
 ## What does my program do?
 
 What if you wanted to run a small gym and keep everything in a notebook? basically this program is designed in a way which replaces that notebook. With it you can:
@@ -36,33 +31,18 @@ What if you wanted to run a small gym and keep everything in a notebook? basical
  **Create membership plans** (for example: "Monthly", "1 month", £30)
  **Record payments** made by members
  **Save** your members to a file when you leave, and **load** them back when you return
-
 ---
-
 ## What you need before starting
-
  **Python** Version 3.6 or above that  
  **coding workspaces**  VS Code, PyCharm anything you like 
  **A terminal**  not sure about you but I use Terminal on MacBook
 
-**Not sure if Python is installed?** Open your terminal and type:
-
-```bash
-python --version
-```
-
-(On some Macs/Linux machines you may need `python3 --version`.) If you see something like `Python 3.11.4`, you're good. If not, download it free from [python.org](https://www.python.org/downloads/).
-
----
-
-## 🛠️ Step-by-step setup
+## My Step-by-step setup
 
 ### Step 1: Create a project folder
-
 Make a new folder anywhere on your computer, for example `gym_project`.
 
 ### Step 2: Create the Python files
-
 Inside that folder, create these **five** files. The names matter, because the files import each other by name.
 
 ```
@@ -75,7 +55,7 @@ gym_project/
 └── members.txt      (optional, the program creates it for you)
 ```
 
-> ⚠️ **Use all lowercase file names.** The code says `from gym import Gym`, so the file must be called `gym.py` (not `Gym.py`). On Windows and Mac it often works either way, but on Linux capital letters will cause an `ModuleNotFoundError`.
+**Use all lowercase file names.** The code says `from gym import Gym`, so the file must be called `gym.py` (not `Gym.py`). On Windows and Mac it often works either way, but on Linux capital letters will cause an `ModuleNotFoundError`.
 
 ### Step 3: Paste the code into each file
 
