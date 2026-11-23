@@ -1,25 +1,25 @@
 # Gym Membership Management System
 This is my simple python program that helps a gym keep track of its **members**, **membership plans** and **payments** from a text menu in the terminal.
 My aim was to create files and add the login behind it to create a suitable gym membership program which **runs** perfectly.
----
+
 ## Table of Contents
 
-1. [What does this program do?]
-2. [What you need before starting]
-3. [Step-by-step setup]
-4. [How the project is organised]
-5. [How to use the program]
-6. [The big picture: how the files talk to each other]
-7. [Code walkthrough, file by file]
+1. What does this program do?
+2. What you need before starting
+3. Step-by-step setup
+4. How the project is organised
+5. How to use the program
+6. The big picture: how the files talk to each other
+7. Code walkthrough, file by file
    - [member.py](#1-memberpy--who-is-a-member)
    - [membership.py](#2-membershippy--what-plans-exist)
    - [payment.py](#3-paymentpy--who-paid-what)
    - [gym.py](#4-gympy--the-manager)
    - [main.py](#5-mainpy--the-menu-you-interact-with)
    - [members.txt](#6-memberstxt--the-saved-data)
-8. [Things to know (current limitations)]
-9. [Ideas for making it better]
----
+8. Some limitations 
+9. How I can make it better
+
 ## What does my program do?
 
 What if you wanted to run a small gym and keep everything in a notebook? basically this program is designed in a way which replaces that notebook. With it you can:
@@ -31,17 +31,15 @@ What if you wanted to run a small gym and keep everything in a notebook? basical
  **Create membership plans** (for example: "Monthly", "1 month", £30)
  **Record payments** made by members
  **Save** your members to a file when you leave, and **load** them back when you return
----
+
 ## What you need before starting
  **Python** Version 3.6 or above that  
  **coding workspaces**  VS Code, PyCharm anything you like 
  **A terminal**  not sure about you but I use Terminal on MacBook
 
 ## My Step-by-step setup
-
 ### Step 1: Create a project folder
 Make a new folder anywhere on your computer, for example `gym_project`.
-
 ### Step 2: Create the Python files
 Inside that folder, create these **five** files. The names matter, because the files import each other by name.
 
@@ -55,20 +53,17 @@ gym_project/
 └── members.txt      (optional, the program creates it for you)
 ```
 
-**Use all lowercase file names.** The code says `from gym import Gym`, so the file must be called `gym.py` (not `Gym.py`). On Windows and Mac it often works either way, but on Linux capital letters will cause an `ModuleNotFoundError`.
-
 ### Step 3: Paste the code into each file
 
 Copy each piece of code into the file with the matching name.
 
 ### Step 4: Check your indentation
 
-Python cares a lot about **indentation** (the spaces at the start of a line). Everything inside a `class`, `def`, `if`, `for`, `while` or `try` must be indented (4 spaces is the standard). If you copy code from somewhere that lost its spacing, the program will refuse to run with an `IndentationError`.
+During the creation of my files I faced a lot of indentation errors and syntax errors as well so make sure of that.
 
 ### Step 5: Check your quote marks
 
-All quote marks in the code must be **straight quotes**: `"` or `'`. Curly quotes like `” “ ‘ ’` (which Word and some chat apps create) will cause a `SyntaxError`.
-
+Like I mentioned in the step before that quotation like ' or " matters so take care of that or syntax error will occur.
 ### Step 6: Run it
 
 Open your terminal, move into the folder, and start the program:
