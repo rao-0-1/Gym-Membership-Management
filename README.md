@@ -9,15 +9,15 @@ My aim was to create files and add the login behind it to create a suitable gym 
 3. Step-by-step setup
 4. How the project is organised
 5. How to use the program
-6. The big picture: how the files talk to each other
-7. Code walkthrough, file by file
+6. How these files work together
+7. Code walkthrough
    - [member.py](#1-memberpy--who-is-a-member)
    - [membership.py](#2-membershippy--what-plans-exist)
    - [payment.py](#3-paymentpy--who-paid-what)
    - [gym.py](#4-gympy--the-manager)
    - [main.py](#5-mainpy--the-menu-you-interact-with)
    - [members.txt](#6-memberstxt--the-saved-data)
-8. Some limitations 
+8. Some things which are lacking
 9. How I can make it better
 
 ## What does my program do?
@@ -72,16 +72,13 @@ Open your terminal, move into the folder, and start the program:
 cd gym_project
 python main.py
 ```
-
-(Use `python3 main.py` if `python` doesn't work on your machine.)
-
-You should see the menu appear. 🎉
+You should see the menu appear.
 
 ---
 
-## 🗂️ How the project is organised
+## How the project is organised
 
-Each file has **one job**. This makes the code tidy and easy to fix later.
+Each file has **one job**
 
 | File | Its job | Real-life comparison |
 |---|---|---|
@@ -94,7 +91,7 @@ Each file has **one job**. This makes the code tidy and easy to fix later.
 
 ---
 
-## 🕹️ How to use the program
+## How to use the program
 
 When you run `main.py`, you'll see this menu:
 
@@ -156,15 +153,14 @@ Enter payment amount: 30
 Payment recorded successfully!
 ```
 
-**Exiting (option 9):** saves your members to `members.txt` and closes the program. **Always exit with option 9**, otherwise your new members will not be saved!
-
+**Exiting (option 9):** saves your members to `members.txt` and closes the program, and make sure to save before you leave the program.
 ---
 
-## 🧩 The big picture: how the files talk to each other
+## The big picture: how the files work together
 
 ```
                     ┌────────────┐
-                    │  main.py   │   ← you type here
+                    │  main.py   │   ← type here
                     └─────┬──────┘
                           │ creates & uses
                     ┌─────▼──────┐
@@ -180,13 +176,13 @@ Payment recorded successfully!
                     gym.py  ⇄  members.txt   (save / load)
 ```
 
-In plain English: `main.py` shows the menu. When you pick an option, it asks the `Gym` object to do the work. The `Gym` keeps three lists (members, plans, payments) made up of `Member`, `Membership` and `Payment` objects.
+To further explain this so basically `main.py` shows the menu like when you pick an option, it asks the `Gym` object to do the work. The `Gym` keeps three lists members, plans, and payments made up of `Member`, `Membership` and `Payment` objects.
 
 ---
 
-## 🔬 Code walkthrough, file by file
+## Code walkthrough, file by file
 
-A quick Python vocabulary check before we dive in:
+some keywords which were worth it for me to remember:
 
 - **Class**: a blueprint for making things. `Member` is the blueprint; "John, age 20" is one thing made from it.
 - **Object**: one actual thing made from a class.
@@ -423,7 +419,7 @@ class Gym:
 ```
 **What this does, piece by piece:**
 - `try:` / `except` = "try this, and if something goes wrong, handle it nicely instead of crashing."
-- `open("members.txt", "w")` opens the file for **writing** (`"w"`). ⚠️ This wipes the old contents first, then writes fresh ones.
+- `open("members.txt", "w")` opens the file for **writing** (`"w"`). This wipes the old contents first, then writes fresh ones.
 - `with ... as file:` opens the file and automatically closes it when finished, even if something goes wrong.
 - For each member, it writes **one line** with their details separated by commas, e.g. `1234,john,20,9887`. The `f"..."` is an **f-string**: anything in `{ }` gets replaced by its value. `\n` ends the line.
 - `OSError` catches problems like "no permission to write here" or "disk full".
@@ -499,7 +495,7 @@ class Gym:
 ```
 **What these do:** `add_payment` stores a payment; `display_payments` prints all of them, or says there are none.
 
-> 📝 **Note:** In your original `gym.py`, `add_membership` appears **twice**, and there's also a `record_payment` method that does the same thing as `add_payment`. Python doesn't complain: the *second* `add_membership` simply replaces the first. You can safely delete the duplicates (see [limitations](#-things-to-know-current-limitations)).
+**Note:** In your original `gym.py`, `add_membership` appears **twice**, and there's also a `record_payment` method that does the same thing as `add_payment`. Python doesn't complain: the *second* `add_membership` simply replaces the first. You can safely delete the duplicates (see [limitations](#-things-to-know-current-limitations)).
 
 ---
 
@@ -665,7 +661,7 @@ while True:
 ```
 **What this does:** If you type something that isn't 1 to 9 (like `hello` or `42`), you get a polite nudge and the menu returns.
 
-> ⚠️ In the original code this last line ended with a curly quote `”)`. It must be a normal straight quote `")`, otherwise Python shows a `SyntaxError`.
+> In the original code this last line ended with a curly quote `”)`. It must be a normal straight quote `")`, otherwise Python shows a `SyntaxError`.
 
 ---
 
@@ -685,7 +681,7 @@ You don't have to create this file yourself. Choosing option 9 creates it. If yo
 
 ---
 
-## ⚠️ Things to know (current limitations)
+## Some things to look out for or lacking
 
 These aren't bugs that stop the program, just things to be aware of:
 
@@ -699,7 +695,7 @@ These aren't bugs that stop the program, just things to be aware of:
 
 ---
 
-## 💡 Ideas for making it better
+## Some ideas for making it better
 
 Great next steps if you want to keep learning:
 
@@ -714,7 +710,7 @@ Great next steps if you want to keep learning:
 
 ---
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 | Error message | What it usually means | Fix |
 |---|---|---|
@@ -727,4 +723,6 @@ Great next steps if you want to keep learning:
 
 ---
 
-Happy coding, and enjoy running your gym! 💪
+Regards,
+
+Rao Muhammad Ibrahim
